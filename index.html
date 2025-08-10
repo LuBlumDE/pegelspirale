@@ -6,9 +6,25 @@
     <title>Pegelspirale</title>
   </head>
   <body>
-    <main id="app" class="center">
-      <h1>Hallo Welt!</h1>
+    <main class="shell">
+      <h1>Pegelspirale</h1>
+
+      <div class="controls">
+        <fieldset>
+          <legend>Tipp</legend>
+          <label><input type="radio" name="guess" value="over" checked /> Drüber (≥51)</label>
+          <label><input type="radio" name="guess" value="under" /> Drunter (≤50)</label>
+        </fieldset>
+
+        <label>Superzahl (0–101)
+          <input id="super" type="number" min="0" max="101" value="50" />
+        </label>
+      </div>
+
+      <button id="draw" class="primary big">Zahl ziehen</button>
+      <div id="result" class="result" aria-live="polite"></div>
     </main>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
