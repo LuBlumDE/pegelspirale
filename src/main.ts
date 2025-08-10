@@ -1,3 +1,4 @@
+import "../style.css";
 import { clampSuper, drawNumber, evaluate } from "./game";
 import type { Guess } from "./types";
 
