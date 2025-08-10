@@ -4,7 +4,7 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;backg
 /* Layouts */
 .center-page{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px;text-align:center}
 .shell{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px}
-.controls{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center}
+.controls{display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center}
 fieldset{border:1px solid #FF7A30;border-radius:12px;padding:8px 12px;background:#465C88}
 label{display:flex;gap:8px;align-items:center}
 input[type=number],input[type=tel]{margin-left:8px;padding:8px;border-radius:10px;border:1px solid #FF7A30;background:#465C88;color: #e9e3df;}
@@ -20,6 +20,7 @@ input[type=number],input[type=tel]{margin-left:8px;padding:8px;border-radius:10p
 .range-toggle{display:flex;gap:12px}
 .range-btn{padding:10px 16px;border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer}
 .range-btn.active{background:#FF7A30}
+.range-btn:not(.ative):hover{background:#0EA5E9}
 
 /* Ergebnisbox */
 .result{min-height:64px;max-width:520px;width:100%;border:1px solid #FF7A30;background:#465C88;border-radius:12px;padding:12px}
