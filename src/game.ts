@@ -2,7 +2,7 @@ import "../style.css";
 
 function clamp(n: number) {
   if (Number.isNaN(n)) return 50;
-  return Math.min(101, Math.max(0, Math.floor(n)));
+  return Math.min(100, Math.max(0, Math.floor(n)));
 }
 function draw(): number {
   return Math.floor(Math.random() * 102); // 0..101
@@ -44,13 +44,38 @@ function updateSuperDisplay(){
   }
 }
 
+function shakeSuper(){
+  if (!superDisplay) return;
+  superDisplay.classList.add("shake");
+  setTimeout(() => superDisplay.classList.remove("shake"), 300);
+}
+
 updateSuperDisplay();
 
 numBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const digit = btn.dataset.num ?? "";
-    if (superInput.value.length >= 3) return;
-    superInput.value += digit;
+    const current = superInput.value;
+
+    if (current.length === 0){
+      if (digit === "0"){
+        shakeSuper();
+        return;
+      }
+      superInput.value = digit;
+    }else if (current.length === 1){
+      superInput.value = current + digit;
+    }else if (current.length === 2){
+      if (current === "10" && digit === "0"){
+        superInput.value = current + digit;
+      }else{
+        shakeSuper();
+        return;
+      }
+    }else{
+      return;
+    }
+    
     updateSuperDisplay();
   });
 });
