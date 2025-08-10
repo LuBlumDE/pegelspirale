@@ -6,6 +6,11 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;backg
 .screen.active{display:block}
 .center-page{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px}
 
+/* Startseite */
+.home{display:flex;flex-direction:column;align-items:center;gap: 16px;padding:32px 24px 24px}
+.tagline{margin:0;font-size:20px}
+.spacer{height:32px}
+
 /* Start/Spiel/Anleitung UI */
 .shell{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px}
 h1,h2{margin:0 0 8px}
