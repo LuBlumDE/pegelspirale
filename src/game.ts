@@ -33,14 +33,25 @@ const underBtn = document.getElementById("range-under") as HTMLButtonElement;
 const superDisplay = document.getElementById("super-display") as HTMLDivElement;
 const numBtns = Array.from(document.querySelectorAll<HTMLButtonElement>(".num-btn"));
 
+function updateSuperDisplay(){
+  if (!superDisplay) return;
+  if (superInput.value){
+    superDisplay.textContent = superInput.value;
+    superDisplay.classList.add("filled");
+  } else {
+    superDisplay.textContent = "Superzahl eingeben";
+    superDisplay.classList.remove("filled");
+  }
+}
+
+updateSuperDisplay();
+
 numBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     const digit = btn.dataset.num ?? "";
     if (superInput.value.length >= 3) return;
     superInput.value += digit;
-    if (superDisplay){
-      superDisplay.textContent = superInput.value;
-    }
+    updateSuperDisplay();
   });
 });
 
