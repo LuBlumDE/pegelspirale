@@ -18,9 +18,23 @@
           </div>
         </fieldset>
 
-        <label>Superzahl
-          <input id="super" type="tel" inputmode="numerice" pattern="[0-9]*" value="50" />
-        </label>
+        <fieldset>
+          <legend>Superzahl</legend>
+          <div id="super-display" class="super-display">Superzahl eingeben</div>
+          <div class="numberpad">
+            <button type="button" class="num-btn" data-num="1">1</button>
+            <button type="button" class="num-btn" data-num="2">2</button>
+            <button type="button" class="num-btn" data-num="3">3</button>
+            <button type="button" class="num-btn" data-num="4">4</button>
+            <button type="button" class="num-btn" data-num="5">5</button>
+            <button type="button" class="num-btn" data-num="6">6</button>
+            <button type="button" class="num-btn" data-num="7">7</button>
+            <button type="button" class="num-btn" data-num="8">8</button>
+            <button type="button" class="num-btn" data-num="9">9</button>
+            <button type="button" class="num-btn zero" data-num="0">0</button>
+          </div>
+          <input id="super" type="hidden" value="" />
+        </fieldset>
       </div>
 
       <button id="draw" class="btn primary big">Zahl ziehen</button>

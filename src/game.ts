@@ -30,6 +30,19 @@ const resultEl = document.getElementById("result") as HTMLDivElement;
 const drawBtn = document.getElementById("draw") as HTMLButtonElement;
 const overBtn = document.getElementById("range-over") as HTMLButtonElement;
 const underBtn = document.getElementById("range-under") as HTMLButtonElement;
+const superDisplay = document.getElementById("super-display") as HTMLDivElement;
+const numBtns = Array.from(document.querySelectorAll<HTMLButtonElement>(".num-btn"));
+
+numBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const digit = btn.dataset.num ?? "";
+    if (superInput.value.length >= 3) return;
+    superInput.value += digit;
+    if (superDisplay){
+      superDisplay.textContent = superInput.value;
+    }
+  });
+});
 
 overBtn?.addEventListener("click", () => setGuess("over"));
 underBtn?.addEventListener("click", () => setGuess("under"));
