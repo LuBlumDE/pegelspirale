@@ -81,10 +81,10 @@ numBtns.forEach((btn) => {
   });
 });
 
-clearbtn?.addEventListener("click", () => {
+clearBtn?.addEventListener("click", () => {
   superInput.value = "";
   updateSuperDisplay();
-})
+});
 
 overBtn?.addEventListener("click", () => setGuess("over"));
 underBtn?.addEventListener("click", () => setGuess("under"));
