@@ -7,7 +7,7 @@ body{margin:0;font-family:system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;backg
 .controls{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center}
 fieldset{border:1px solid #FF7A30;border-radius:12px;padding:8px 12px;background:#465C88}
 label{display:flex;gap:8px;align-items:center}
-input[type=number]{margin-left:8px;padding:8px;border-radius:10px;border:1px solid #FF7A30;background:#465C88;color: #e9e3df;}
+input[type=number],input[type=tel]{margin-left:8px;padding:8px;border-radius:10px;border:1px solid #FF7A30;background:#465C88;color: #e9e3df;}
 
 /* Buttons/Links */
 .btn{display:inline-block;text-decoration:none;padding:10px 16px;border-radius:12px;border:1px solid #FF7A30;background: #ff7a30;color:#E9E3DF;cursor:pointer}
@@ -16,6 +16,10 @@ input[type=number]{margin-left:8px;padding:8px;border-radius:10px;border:1px sol
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .btn-col{display:flex;flex-direction:column;gap:12px;align-items:center}
 .btn-col .btn{min-width:240px;padding:14px 28px}
+
+.range-toggle{display:flex;gap:12px}
+.range-btn{padding:10px 16px;border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer}
+.range-btn.active{background:#FF7A30}
 
 /* Ergebnisbox */
 .result{min-height:64px;max-width:520px;width:100%;border:1px solid #FF7A30;background:#465C88;border-radius:12px;padding:12px}

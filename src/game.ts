@@ -7,14 +7,34 @@ function clamp(n: number) {
 function draw(): number {
   return Math.floor(Math.random() * 102); // 0..101
 }
+
+let guess: "over" | "under" = "under";
+
+function setGuess(g: "over" | "under"){
+  guess = g;
+  if (g == "over"){
+    overBtn.classList.add("active");
+    underBtn.classList.remove("active");
+  } else {
+    underBtn.classList.add("active");
+    overBtn.classList.remove("active");
+  }
+}
+
 function getGuess(): "over" | "under" {
-  const el = document.querySelector('input[name="guess"]:checked') as HTMLInputElement | null;
-  return el?.value === "under" ? "under" : "over";
+  return guess;
 }
 
 const superInput = document.getElementById("super") as HTMLInputElement;
 const resultEl = document.getElementById("result") as HTMLDivElement;
 const drawBtn = document.getElementById("draw") as HTMLButtonElement;
+const overBtn = document.getElementById("range-over") as HTMLButtonElement;
+const underBtn = document.getElementById("range-under") as HTMLButtonElement;
+
+overBtn?.addEventListener("click", () => setGuess("over"));
+underBtn?.addEventListener("click", () => setGuess("under"));
+
+setGuess("under");
 
 drawBtn?.addEventListener("click", () => {
   const s = clamp(Number(superInput.value));
@@ -36,13 +56,13 @@ drawBtn?.addEventListener("click", () => {
   } else if (correct) {
     resultEl.innerHTML = `
       <div><span class="badge">Zahl</span><strong>${n}</strong></div>
-      <div><span class="badge">Tipp</span>${tip}</div>
+      <div><span class="badge">Bereich</span>${tip}</div>
       <p class="ok">Treffer. Gegenspieler trinken 1 Schluck.</p>
     `;
   } else {
     resultEl.innerHTML = `
       <div><span class="badge">Zahl</span><strong>${n}</strong></div>
-      <div><span class="badge">Tipp</span>${tip}</div>
+      <div><span class="badge">Bereich</span>${tip}</div>
       <p class="bad">Falsch. Angreifer trinkt 1 Schluck (bleibt dran).</p>
     `;
   }
