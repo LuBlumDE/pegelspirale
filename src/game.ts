@@ -31,7 +31,8 @@ const drawBtn = document.getElementById("draw") as HTMLButtonElement;
 const overBtn = document.getElementById("range-over") as HTMLButtonElement;
 const underBtn = document.getElementById("range-under") as HTMLButtonElement;
 const superDisplay = document.getElementById("super-display") as HTMLDivElement;
-const numBtns = Array.from(document.querySelectorAll<HTMLButtonElement>(".num-btn"));
+const numBtns = Array.from(document.querySelectorAll<HTMLButtonElement>(".num-btn[data-num]"));
+const clearBtn = document.getElementById("clear-super") as HTMLButtonElement;
 
 function updateSuperDisplay(){
   if (!superDisplay) return;
@@ -75,10 +76,15 @@ numBtns.forEach((btn) => {
     }else{
       return;
     }
-    
+
     updateSuperDisplay();
   });
 });
+
+clearbtn?.addEventListener("click", () => {
+  superInput.value = "";
+  updateSuperDisplay();
+})
 
 overBtn?.addEventListener("click", () => setGuess("over"));
 underBtn?.addEventListener("click", () => setGuess("under"));
