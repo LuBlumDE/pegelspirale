@@ -6,24 +6,48 @@
     <title>Pegelspirale</title>
   </head>
   <body>
-    <main class="shell">
+    <!-- START -->
+    <section id="home" class="screen active home center-page">
       <h1>Pegelspirale</h1>
-
-      <div class="controls">
-        <fieldset>
-          <legend>Tipp</legend>
-          <label><input type="radio" name="guess" value="over" checked /> Drüber (≥51)</label>
-          <label><input type="radio" name="guess" value="under" /> Drunter (≤50)</label>
-        </fieldset>
-
-        <label>Superzahl (0–101)
-          <input id="super" type="number" min="0" max="101" value="50" />
-        </label>
+      <p>Drüber/Drunter mit fieser Superzahl.</p>
+      <div class="btn-row">
+        <button id="btnStart" class="primary big">Spiel starten</button>
+        <button id="btnHelp" class="big">Spielanleitung</button>
       </div>
+    </section>
 
-      <button id="draw" class="primary big">Zahl ziehen</button>
-      <div id="result" class="result" aria-live="polite"></div>
-    </main>
+    <!-- SPIEL -->
+    <section id="game" class="screen">
+      <main class="shell">
+        <h2>Spiel</h2>
+
+        <div class="controls">
+          <fieldset>
+            <legend>Tipp</legend>
+            <label><input type="radio" name="guess" value="over" checked /> Drüber (≥51)</label>
+            <label><input type="radio" name="guess" value="under" /> Drunter (≤50)</label>
+          </fieldset>
+
+          <label>Superzahl (0–101)
+            <input id="super" type="number" min="0" max="101" value="50" />
+          </label>
+        </div>
+
+        <button id="draw" class="primary big">Zahl ziehen</button>
+        <div id="result" class="result" aria-live="polite"></div>
+
+        <div class="btn-row">
+          <button id="btnBackHome1" class="ghost">Zurück</button>
+        </div>
+      </main>
+    </section>
+
+    <!-- ANLEITUNG -->
+    <section id="help" class="screen help center-page">
+      <h2>Spielanleitung</h2>
+      <p>Hier entsteht die Spielanleitung.</p>
+      <button id="btnBackHome2" class="ghost big">Zurück</button>
+    </section>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
