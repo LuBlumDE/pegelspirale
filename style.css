@@ -1,29 +1,18 @@
 html,body{height:100%}
 body{margin:0;font-family:system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;background:#0b1220;color:#e6ecf1}
 
-/* Screens */
-.screen{display:none}
-.screen.active{display:block}
-.center-page{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px}
-
-/* Startseite */
-.home{display:flex;flex-direction:column;align-items:center;gap: 16px;padding:32px 24px 24px}
-.tagline{margin:0;font-size:20px}
-.spacer{height:32px}
-
-/* Start/Spiel/Anleitung UI */
+/* Layouts */
+.center-page{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px;text-align:center}
 .shell{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px}
-h1,h2{margin:0 0 8px}
 .controls{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:center}
 fieldset{border:1px solid #25324a;border-radius:12px;padding:8px 12px;background:#0f172a}
 label{display:flex;gap:8px;align-items:center}
 input[type=number]{margin-left:8px;padding:8px;border-radius:10px;border:1px solid #25324a;background:#0f172a;color:#e6ecf1}
 
-/* Buttons */
-button{padding:10px 16px;border-radius:12px;border:1px solid #334155;background:#172036;color:#e6ecf1;cursor:pointer}
-button.primary{background:#0ea5e9;border-color:#0ea5e9}
-button.big{font-size:18px;padding:14px 20px}
-button.ghost{background:transparent}
+/* Buttons/Links */
+.btn{display:inline-block;text-decoration:none;padding:10px 16px;border-radius:12px;border:1px solid #334155;background:#172036;color:#e6ecf1;cursor:pointer}
+.btn.primary{background:#0ea5e9;border-color:#0ea5e9}
+.btn.big{font-size:18px;padding:14px 20px}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 
 /* Ergebnisbox */
