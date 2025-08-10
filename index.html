@@ -1,13 +1,65 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pegelspirale</title>
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <header class="appbar">
+      <h1>Pegelspirale</h1>
+      <button id="resetAll" class="ghost">Neue Runde</button>
+    </header>
+
+    <main class="container">
+      <!-- SETUP -->
+      <section id="setup" class="screen active">
+        <h2>Spieler hinzufügen</h2>
+        <div class="row">
+          <input id="playerInput" placeholder="Name" />
+          <button id="addPlayer">Hinzufügen</button>
+        </div>
+        <ul id="players" class="pill-list"></ul>
+        <p class="hint">Reihenfolge = Spielreihenfolge. Ziehen zum Sortieren machen wir später – aktuell ist die Eingabereihenfolge maßgeblich.</p>
+        <button id="start" class="primary" disabled>Spiel starten</button>
+      </section>
+
+      <!-- GAME -->
+      <section id="game" class="screen">
+        <div class="row space-between align-center">
+          <div class="chip">Am Zug: <strong id="attackerName">–</strong></div>
+          <div class="chip">Runde: <strong id="roundCounter">1</strong></div>
+        </div>
+
+        <h3>Gegenspieler wählen</h3>
+        <ul id="opponentList" class="pill-list selectable"></ul>
+
+        <div class="row">
+          <fieldset class="group">
+            <legend>Tipp</legend>
+            <label><input type="radio" name="guess" value="over" checked /> Drüber (≥51)</label>
+            <label><input type="radio" name="guess" value="under" /> Drunter (≤50)</label>
+          </fieldset>
+
+          <label class="group">
+            <span>Superzahl (0–101)</span>
+            <input id="super" type="number" min="0" max="101" value="50" />
+          </label>
+        </div>
+
+        <div class="row">
+          <button id="draw" class="primary big">Zahl ziehen</button>
+        </div>
+
+        <section id="result" class="result" aria-live="polite"></section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Teilt die URL – läuft komplett im Browser. Gesundheit first: Stop, wenn jemand nicht mehr mag.</small>
+    </footer>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
