@@ -22,8 +22,21 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
 .game-screen .bottom{position:absolute;bottom:2vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
 
 /* Buttons/Links */
-.btn{display:inline-block;text-decoration:none;padding:10px 16px;border-radius:12px;border:1px solid #FF7A30;background: #ff7a30;color:#E9E3DF;cursor:pointer}
-.btn{display:inline-block;text-decoration:none;border-radius:12px;border:1px solid #FF7A30;background:#ff7a30;color:#E9E3DF;cursor:pointer;white-space:nowrap;font-size:clamp(16px,4vw,24px);padding:clamp(8px,1.5vh,16px) clamp(12px,4vw,24px)}
+.btn{
+  display:inline-flex;
+  text-decoration:none;
+  border-radius:12px;
+  border:1px solid #FF7A30;
+  background:#ff7a30;
+  color:#E9E3DF;
+  cursor:pointer;
+  white-space:nowrap;
+  font-size:clamp(16px,4vw,24px);
+  padding:clamp(8px,1.5vh,16px) clamp(12px,4vw,24px);
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
 .btn.primary{background:#0ea5e9;border-color:#FF7A30}
 .btn.big{font-size:18px;padding:14px 20px}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
@@ -54,12 +67,36 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
 .numberpad .clear{grid-column:3}
 
 /* Ergebnisbox */
-.result{min-height:64px;max-width:520px;width:100%;border:1px solid #FF7A30;background:#465C88;border-radius:12px;padding:12px}
+.result{
+  min-height:64px;
+  width:100%;
+  border:1px solid #FF7A30;
+  background:#465C88;
+  border-radius:12px;
+  padding:12px;
+  box-sizing:border-box;
+  flex:1;
+  overflow:auto;
+}
 .badge{display:inline-block;border:1px solid #FF7A30;border-radius:999px;padding:2px 8px;margin-right:6px}
 .ok{color:#E9E3DF}.super{color:#E9E3DF}.bad{color:#E9E3DF}
 
 /* Ergebnisdialog */
-#result-dialog{border:none;padding:0;background:transparent}
+#result-dialog{
+  border:none;
+  padding:0;
+  background:transparent;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:61.8vw;
+  height:33vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
 #result-dialog::backdrop{background:rgba(0,0,0,.5)}
 
 /* Shake animationfor invalid input */
