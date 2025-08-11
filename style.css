@@ -92,6 +92,8 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
   transform:translate(-50%,-50%);
   width:61.8vw;
   height:33vh;
+}
+#result-dialog[open]{
   display:flex;
   flex-direction:column;
   justify-content:center;
