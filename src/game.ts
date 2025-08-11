@@ -27,6 +27,8 @@ function getGuess(): "over" | "under" {
 
 const superInput = document.getElementById("super") as HTMLInputElement;
 const resultEl = document.getElementById("result") as HTMLDivElement;
+const resultDialog = document.getElementById("result-dialog") as HTMLDialogElement;
+const closeResultBtn = document.getElementById("close-result") as HTMLButtonElement;
 const drawBtn = document.getElementById("draw") as HTMLButtonElement;
 const overBtn = document.getElementById("range-over") as HTMLButtonElement;
 const underBtn = document.getElementById("range-under") as HTMLButtonElement;
@@ -89,6 +91,11 @@ clearBtn?.addEventListener("click", () => {
 overBtn?.addEventListener("click", () => setGuess("over"));
 underBtn?.addEventListener("click", () => setGuess("under"));
 
+closeResultBtn?.addEventListener("click", () => {
+  resultDialog.close();
+  drawBtn.focus();
+});
+
 setGuess("under");
 
 drawBtn?.addEventListener("click", () => {
@@ -121,4 +128,6 @@ drawBtn?.addEventListener("click", () => {
       <p class="bad">Falsch. Angreifer trinkt 1 Schluck (bleibt dran).</p>
     `;
   }
+
+  resultDialog.showModal();
 });

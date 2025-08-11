@@ -39,13 +39,19 @@
       </div>
 
       <button id="draw" class="btn primary big">Zahl ziehen</button>
-      <div id="result" class="result" aria-live="polite"></div>
-
+     
       <div class="btn-row" style="margin-top:12px">
         <a class="btn" href="./index.html">Zurück</a>
       </div>
     </main>
 
+    <dialog id="result-dialog">
+      <div id="result" class="result" aria-live="polite"></div>
+      <div class="btn-row" style="margin-top:12px">
+        <button id="close-resulte" class="btn">Weiter</button>
+      </div>
+    </dialog>
+    
     <script type="module" src="/src/game.ts"></script>
   </body>
 </html>

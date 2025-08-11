@@ -35,6 +35,10 @@ input[type=number],input[type=tel]{margin-left:8px;padding:8px;border-radius:10p
 .badge{display:inline-block;border:1px solid #FF7A30;border-radius:999px;padding:2px 8px;margin-right:6px}
 .ok{color:#E9E3DF}.super{color:#E9E3DF}.bad{color:#E9E3DF}
 
+/* Ergebnisdialog */
+#result-dialog{border:none;padding:0;background:transparent}
+#result-dialog::backdrop{background:rgba(0,0,0,.5)}
+
 /* Shake animationfor invalid input */
 .super-display.shake{animation:shake .3s}
 @keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
