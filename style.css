@@ -1,24 +1,43 @@
 html,body{height:100%;overflow:hidden}
 body{margin:0;font-family:system-ui,Segoe UI,Roboto,Inter,Arial,sans-serif;background:#456C88;color:#E9E3DF}
 
-/* Layouts */
-.center-page{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px;text-align:center}
-.shell{min-height:100vh;display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;padding:24px}
-.controls{display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center}
-fieldset{border:1px solid #FF7A30;border-radius:12px;padding:8px 12px;background:#465C88}
+/* Grundlayouts */
+.center-page{min-height:100vh;display:flex;flex-direction:column;gap:2vh;align-items:center;justify-content:center;padding:4vh;text-align:center}
+fieldset{border:1px solid #FF7A30;border-radius:12px;padding:1vh 2vw;background:#456C88}
 label{display:flex;gap:8px;align-items:center}
-input[type=number],input[type=tel]{margin-left:8px;padding:8px;border-radius:10px;border:1px solid #FF7A30;background:#465C88;color: #e9e3df;}
+input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10px;border:1px solid #FF7A30;background:#465C88;color:#e9e3df;}
+
+/* Startseite */
+.start-screen{position:relative;width:100vw;height:100vh}
+.start-header{position:absolute;top:2vh;left:50%;transform:translateX(-50%);text-align:center}
+.start-header h1{margin:0;font-size:clamp(24px,8vw,48px);white-space:nowrap}
+.start-header p{margin:0;font-size:clamp(14px,4vw,24px);white-space:nowrap;opacity:.8}
+.start-screen .btn-col{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:2vh;align-items:center}
+
+/* Spielseite */
+.game-screen{position:relative;width:100vw;height:100vh}
+.game-screen .top{position:absolute;top:2vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:2vh;align-items:center}
+.game-screen .top h2{margin:0;font-size:clamp(20px,6vw,40px);white-space:nowrap}
+.game-screen .middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
+.game-screen .bottom{position:absolute;bottom:2vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
 
 /* Buttons/Links */
 .btn{display:inline-block;text-decoration:none;padding:10px 16px;border-radius:12px;border:1px solid #FF7A30;background: #ff7a30;color:#E9E3DF;cursor:pointer}
+.btn{display:inline-block;text-decoration:none;border-radius:12px;border:1px solid #FF7A30;background:#ff7a30;color:#E9E3DF;cursor:pointer;white-space:nowrap;font-size:clamp(16px,4vw,24px);padding:clamp(8px,1.5vh,16px) clamp(12px,4vw,24px)}
 .btn.primary{background:#0ea5e9;border-color:#FF7A30}
 .btn.big{font-size:18px;padding:14px 20px}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .btn-col{display:flex;flex-direction:column;gap:12px;align-items:center}
 .btn-col .btn{min-width:240px;padding:14px 28px}
+.btn.big{font-size:clamp(18px,5vw,32px);padding:clamp(12px,2vh,24px) clamp(20px,6vw,32px)}
+.btn-row{display:flex;gap:2vh;flex-wrap:wrap;justify-content:center}
+.btn-col{display:flex;flex-direction:column;gap:2vh;align-items:center}
+.btn-col .btn{min-width:40vw}
 
 .range-toggle{display:flex;gap:12px}
 .range-btn{padding:10px 16px;border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer}
+.range-toggle{display:flex;gap:2vh}
+.range-btn{padding:clamp(8px,1.5vh,16px) clamp(12px,4vw,24px);border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer;font-size:clamp(16px,4vw,24px);white-space:nowrap}
 .range-btn.active{background:#FF7A30}
 .range-btn:not(.active):hover{background:#0EA5E9}
 .range-btn.active:hover{background:#FF7A30}
@@ -27,6 +46,10 @@ input[type=number],input[type=tel]{margin-left:8px;padding:8px;border-radius:10p
 .super-display.filled{color:#E9E3DF;font-size:20px}
 .numberpad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;justify-content:center}
 .num-btn{padding:10px 16px;border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer;font-size:20px}
+.super-display{min-width:40vw;min-height:6vh;border:1px solid #FF7A30;border-radius:12px;padding:1vh 2vw;background:#465C88;text-align:center;margin-bottom:2vh;display:flex;justify-content:center;align-items:center;color:#bbb;font-size:clamp(14px,4vw,24px);line-height:1;white-space:nowrap}
+.super-display.filled{color:#E9E3DF;font-size:clamp(20px,6vw,36px)}
+.numberpad{display:grid;grid-template-columns:repeat(3,1fr);gap:2vh;justify-content:center}
+.num-btn{padding:clamp(8px,1.5vh,16px) clamp(12px,4vw,24px);border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer;font-size:clamp(20px,6vw,36px)}
 .numberpad .zero{grid-column:2}
 .numberpad .clear{grid-column:3}
 

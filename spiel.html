@@ -6,10 +6,9 @@
     <title>Spiel • Pegelspirale</title>
   </head>
   <body>
-    <main class="shell">
-      <h2>Spiel</h2>
-
-      <div class="controls">
+    <main class="game-screen">
+      <div class="top">
+        <h2>Spiel</h2>
         <fieldset>
           <legend>Bereich</legend>
           <div class="range-toggle">
@@ -17,7 +16,9 @@
             <button id="range-over" type="button" class="range-btn">Drüber</button>
           </div>
         </fieldset>
+      </div>
 
+      <div class="middle">
         <fieldset>
           <legend>Superzahl</legend>
           <div id="super-display" class="super-display">Superzahl eingeben</div>
@@ -38,10 +39,11 @@
         </fieldset>
       </div>
 
-      <button id="draw" class="btn primary big">Zahl ziehen</button>
-     
-      <div class="btn-row" style="margin-top:12px">
-        <a class="btn" href="./index.html">Zurück</a>
+      <div class="bottom">
+        <button id="draw" class="btn primary big">Zahl ziehen</button>
+        <div class="btn-row">
+          <a class="btn" href="./index.html">Zurück</a>
+        </div>
       </div>
     </main>
 
