@@ -106,26 +106,26 @@ drawBtn?.addEventListener("click", () => {
   const guess = getGuess();
   const correct = (guess === "over" && over) || (guess === "under" && !over);
 
-  const tip = guess === "over" ? "Drüber (≥51)" : "Drunter (≤50)";
-  const range = `${Math.max(0, s - 2)}–${Math.min(101, s + 2)}`;
+  const actualRange = over ? "drüber" : "drunter";
+  const lines = `
+      <div style="white-space:pre;text-align:left;">gezogen wurde:\t${n}</div>
+      <div style="white-space:pre;text-align:left;">daher Bereich:\t${actualRange}</div>
+    `;
 
   if (inSuper) {
     resultEl.innerHTML = `
-      <div><span class="badge">Zahl</span><strong>${n}</strong></div>
-      <div><span class="badge">Super</span>Bereich ${range}</div>
-      <p class="super"><strong>SUPER!</strong> Gegenspieler exen.</p>
+      ${lines}
+      <p class="super">EX EX EX leert eure Gläser</p>
     `;
   } else if (correct) {
     resultEl.innerHTML = `
-      <div><span class="badge">Zahl</span><strong>${n}</strong></div>
-      <div><span class="badge">Bereich</span>${tip}</div>
-      <p class="ok">Treffer. Gegenspieler trinken 1 Schluck.</p>
+      ${lines}
+      <p class="ok">korrekter Bereich, ein Schluck für die Verlierer</p>
     `;
   } else {
     resultEl.innerHTML = `
-      <div><span class="badge">Zahl</span><strong>${n}</strong></div>
-      <div><span class="badge">Bereich</span>${tip}</div>
-      <p class="bad">Falsch. Angreifer trinkt 1 Schluck (bleibt dran).</p>
+      ${lines}
+      <p class="bad">das war nichts, trink selbst</p>
     `;
   }
 
