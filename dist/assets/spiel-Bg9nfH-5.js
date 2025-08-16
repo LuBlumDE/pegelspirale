@@ -1,0 +1,13 @@
+import"./style-DMXaC8ee.js";function y(e){return Number.isNaN(e)?50:Math.min(100,Math.max(0,Math.floor(e)))}function b(){return Math.floor(Math.random()*102)}let f="under";function m(e){f=e,e=="over"?(a.classList.add("active"),c.classList.remove("active")):(c.classList.add("active"),a.classList.remove("active"))}function M(){return f}const r=document.getElementById("super"),d=document.getElementById("result"),h=document.getElementById("result-dialog"),o=document.getElementById("close-result"),i=document.getElementById("draw"),a=document.getElementById("range-over"),c=document.getElementById("range-under"),n=document.getElementById("super-display"),I=Array.from(document.querySelectorAll(".num-btn[data-num]")),u=document.getElementById("clear-super");function p(){n&&(r.value?(n.textContent=r.value,n.classList.add("filled")):(n.textContent="Superzahl eingeben",n.classList.remove("filled")))}function g(){n&&(n.classList.add("shake"),setTimeout(()=>n.classList.remove("shake"),300))}p();I.forEach(e=>{e.addEventListener("click",()=>{const t=e.dataset.num??"",s=r.value;if(s.length===0){if(t==="0"){g();return}r.value=t}else if(s.length===1)r.value=s+t;else if(s.length===2)if(s==="10"&&t==="0")r.value=s+t;else{g();return}else return;p()})});u==null||u.addEventListener("click",()=>{r.value="",p()});a==null||a.addEventListener("click",()=>m("over"));c==null||c.addEventListener("click",()=>m("under"));o==null||o.addEventListener("click",()=>{h.close(),i.focus()});m("under");i==null||i.addEventListener("click",()=>{const e=y(Number(r.value)),t=b(),s=t>=51,E=t>=Math.max(0,e-2)&&t<=Math.min(101,e+2),l=M(),L=l==="over"&&s||l==="under"&&!s,v=l==="over"?"Drüber (≥51)":"Drunter (≤50)",k=`${Math.max(0,e-2)}–${Math.min(101,e+2)}`;E?d.innerHTML=`
+      <div><span class="badge">Zahl</span><strong>${t}</strong></div>
+      <div><span class="badge">Super</span>Bereich ${k}</div>
+      <p class="super"><strong>SUPER!</strong> Gegenspieler exen.</p>
+    `:L?d.innerHTML=`
+      <div><span class="badge">Zahl</span><strong>${t}</strong></div>
+      <div><span class="badge">Bereich</span>${v}</div>
+      <p class="ok">Treffer. Gegenspieler trinken 1 Schluck.</p>
+    `:d.innerHTML=`
+      <div><span class="badge">Zahl</span><strong>${t}</strong></div>
+      <div><span class="badge">Bereich</span>${v}</div>
+      <p class="bad">Falsch. Angreifer trinkt 1 Schluck (bleibt dran).</p>
+    `,h.showModal()});

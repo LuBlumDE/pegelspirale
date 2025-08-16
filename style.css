@@ -15,11 +15,11 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
 .start-screen .btn-col{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;gap:2vh;align-items:center}
 
 /* Spielseite */
-.game-screen{position:relative;width:100vw;height:100vh;height:100dvh}
-.game-screen .top{position:absolute;top:5vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:3vh;align-items:center}
+.game-screen{position:relative;width:100vw;height:100vh;height:100dvh;display:flex;flex-direction:column;align-items:center}
+.game-screen .top{margin-top:5vh;display:flex;flex-direction:column;gap:3vh;align-items:center}
 .game-screen .top h2{margin:0;font-size:clamp(20px,6vw,40px);white-space:nowrap}
-.game-screen .middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
-.game-screen .bottom{position:absolute;bottom:2vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
+.game-screen .middle{flex:1;display:flex;flex-direction:column;align-items:center;gap:2vh;justify-content:center}
+.game-screen .bottom{margin-bottom:2vh;display:flex;flex-direction:column;align-items:center;gap:2vh}
 
 .back-arrow{position:absolute;top:5vh;left:25%;transform:translate(-50%,0);color:#FF7A30;text-decoration:none;font-size:clamp(20px,6vw,40px);line-height:1}
 
