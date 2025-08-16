@@ -16,9 +16,9 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
 
 /* Spielseite */
 .game-screen{position:relative;width:100vw;height:100vh;height:100dvh}
-.game-screen .top{position:absolute;top:2vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:2vh;align-items:center}
+.game-screen .top{position:absolute;top:1vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;gap:1vh;align-items:center}
 .game-screen .top h2{margin:0;font-size:clamp(20px,6vw,40px);white-space:nowrap}
-.game-screen .middle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
+.game-screen .middle{position:absolute;top:55%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
 .game-screen .bottom{position:absolute;bottom:2vh;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2vh}
 
 /* Buttons/Links */
@@ -62,7 +62,7 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
 .super-display{min-width:40vw;min-height:6vh;border:1px solid #FF7A30;border-radius:12px;padding:1vh 2vw;background:#465C88;text-align:center;margin-bottom:2vh;display:flex;justify-content:center;align-items:center;color:#bbb;font-size:clamp(14px,4vw,24px);line-height:1;white-space:nowrap}
 .super-display.filled{color:#E9E3DF;font-size:clamp(20px,6vw,36px)}
 .numberpad{display:grid;grid-template-columns:repeat(3,1fr);gap:2vh;justify-content:center}
-.num-btn{padding:clamp(8px,1.5vh,16px) clamp(12px,4vw,24px);border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer;font-size:clamp(20px,6vw,36px)}
+.num-btn{padding:clamp(8px,1.5vh,16px) clamp(12px,4vw,24px);border-radius:12px;border:1px solid #FF7A30;background:#F1A66A;color:#E9E3DF;cursor:pointer;font-size:clamp(20px,6vw,36px);touch-action:manipulation}
 .numberpad .zero{grid-column:2}
 .numberpad .clear{grid-column:3}
 
