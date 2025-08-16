@@ -79,7 +79,9 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
   box-sizing:border-box;
   flex:1;
   overflow:auto;
+  text-align:left;
 }
+.result-line{display:flex;gap:8px;align-items:center;margin-bottom:4px}
 .badge{display:inline-block;border:1px solid #FF7A30;border-radius:999px;padding:2px 8px;margin-right:6px}
 .ok{color:#E9E3DF}.super{color:#E9E3DF}.bad{color:#E9E3DF}
 

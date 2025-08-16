@@ -107,9 +107,12 @@ drawBtn?.addEventListener("click", () => {
   const correct = (guess === "over" && over) || (guess === "under" && !over);
 
   const actualRange = over ? "drüber" : "drunter";
+  const guessText = guess === "over" ? "drüber" : "drunter";
   const lines = `
-      <div style="white-space:pre;text-align:left;">gezogen wurde:\t${n}</div>
-      <div style="white-space:pre;text-align:left;">daher Bereich:\t${actualRange}</div>
+      <div class="result-line"><span class="badge">Zahl</span>${n}</div>
+      <div class="result-line"><span class="badge">Bereich</span>${actualRange}</div>
+      <div class="result-line"><span class="badge">Dein Tipp</span>${guessText}</div>
+      <div class="result-line"><span class="badge">Superzahl</span>${s}</div>
     `;
 
   if (inSuper) {

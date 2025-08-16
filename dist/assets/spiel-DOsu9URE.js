@@ -1,13 +1,15 @@
-import"./style-DMXaC8ee.js";function y(e){return Number.isNaN(e)?50:Math.min(100,Math.max(0,Math.floor(e)))}function k(){return Math.floor(Math.random()*102)}let g="under";function m(e){g=e,e=="over"?(l.classList.add("active"),c.classList.remove("active")):(c.classList.add("active"),l.classList.remove("active"))}function M(){return g}const r=document.getElementById("super"),u=document.getElementById("result"),h=document.getElementById("result-dialog"),o=document.getElementById("close-result"),a=document.getElementById("draw"),l=document.getElementById("range-over"),c=document.getElementById("range-under"),s=document.getElementById("super-display"),I=Array.from(document.querySelectorAll(".num-btn[data-num]")),d=document.getElementById("clear-super");function v(){s&&(r.value?(s.textContent=r.value,s.classList.add("filled")):(s.textContent="Superzahl eingeben",s.classList.remove("filled")))}function p(){s&&(s.classList.add("shake"),setTimeout(()=>s.classList.remove("shake"),300))}v();I.forEach(e=>{e.addEventListener("click",()=>{const t=e.dataset.num??"",n=r.value;if(n.length===0){if(t==="0"){p();return}r.value=t}else if(n.length===1)r.value=n+t;else if(n.length===2)if(n==="10"&&t==="0")r.value=n+t;else{p();return}else return;v()})});d==null||d.addEventListener("click",()=>{r.value="",v()});l==null||l.addEventListener("click",()=>m("over"));c==null||c.addEventListener("click",()=>m("under"));o==null||o.addEventListener("click",()=>{h.close(),a.focus()});m("under");a==null||a.addEventListener("click",()=>{const e=y(Number(r.value)),t=k(),n=t>=51,E=t>=Math.max(0,e-2)&&t<=Math.min(101,e+2),f=M(),L=f==="over"&&n||f==="under"&&!n,i=`
-      <div style="white-space:pre;text-align:left;">gezogen wurde:	${t}</div>
-      <div style="white-space:pre;text-align:left;">daher Bereich:	${n?"drüber":"drunter"}</div>
-    `;E?u.innerHTML=`
-      ${i}
+import"./style-C5m2fqyP.js";function k(e){return Number.isNaN(e)?50:Math.min(100,Math.max(0,Math.floor(e)))}function y(){return Math.floor(Math.random()*102)}let f="under";function v(e){f=e,e=="over"?(a.classList.add("active"),l.classList.remove("active")):(l.classList.add("active"),a.classList.remove("active"))}function b(){return f}const r=document.getElementById("super"),d=document.getElementById("result"),h=document.getElementById("result-dialog"),o=document.getElementById("close-result"),c=document.getElementById("draw"),a=document.getElementById("range-over"),l=document.getElementById("range-under"),n=document.getElementById("super-display"),M=Array.from(document.querySelectorAll(".num-btn[data-num]")),m=document.getElementById("clear-super");function p(){n&&(r.value?(n.textContent=r.value,n.classList.add("filled")):(n.textContent="Superzahl eingeben",n.classList.remove("filled")))}function g(){n&&(n.classList.add("shake"),setTimeout(()=>n.classList.remove("shake"),300))}p();M.forEach(e=>{e.addEventListener("click",()=>{const s=e.dataset.num??"",t=r.value;if(t.length===0){if(s==="0"){g();return}r.value=s}else if(t.length===1)r.value=t+s;else if(t.length===2)if(t==="10"&&s==="0")r.value=t+s;else{g();return}else return;p()})});m==null||m.addEventListener("click",()=>{r.value="",p()});a==null||a.addEventListener("click",()=>v("over"));l==null||l.addEventListener("click",()=>v("under"));o==null||o.addEventListener("click",()=>{h.close(),c.focus()});v("under");c==null||c.addEventListener("click",()=>{const e=k(Number(r.value)),s=y(),t=s>=51,E=s>=Math.max(0,e-2)&&s<=Math.min(101,e+2),i=b(),L=i==="over"&&t||i==="under"&&!t,u=`
+      <div class="result-line"><span class="badge">Zahl</span>${s}</div>
+      <div class="result-line"><span class="badge">Bereich</span>${t?"drüber":"drunter"}</div>
+      <div class="result-line"><span class="badge">Dein Tipp</span>${i==="over"?"drüber":"drunter"}</div>
+      <div class="result-line"><span class="badge">Superzahl</span>${e}</div>
+    `;E?d.innerHTML=`
+      ${u}
       <p class="super">EX EX EX leert eure Gläser</p>
-    `:L?u.innerHTML=`
-      ${i}
+    `:L?d.innerHTML=`
+      ${u}
       <p class="ok">korrekter Bereich, ein Schluck für die Verlierer</p>
-    `:u.innerHTML=`
-      ${i}
+    `:d.innerHTML=`
+      ${u}
       <p class="bad">das war nichts, trink selbst</p>
     `,h.showModal()});
