@@ -79,7 +79,7 @@ input[type=number],input[type=tel]{margin-left:8px;padding:1vh;border-radius:10p
   text-align:center;
   width:fit-content;
 }
-.result-line{white-space:pre;text-align:right;margin:0 auto 4px}
+.result-line{white-space:pre;text-align:left;margin:0 auto 4px}
 .result-heading{margin:0 0 4px}
 .ok{color:#E9E3DF}.super{color:#E9E3DF}.bad{color:#E9E3DF}
 
