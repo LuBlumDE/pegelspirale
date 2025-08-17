@@ -109,11 +109,11 @@ drawBtn?.addEventListener("click", () => {
   const actualRange = over ? "drüber" : "drunter";
   const guessText = guess === "over" ? "drüber" : "drunter";
   const lines = `
-      <h3 class="result-heading">Ergebnisse</h3>
-      <pre class="result-line">Ergebnis		${n}</pre>
-      <pre class="result-line">Bereich		${actualRange}</pre>
-      <pre class="result-line">Dein Tipp		${guessText}</pre>
-      <pre class="result-line">Superzahl		${s}</pre>
+      <h3 class="result-heading">Auswertung</h3>
+      <pre class="result-line">Ergebnis		        ${n}</pre>
+      <pre class="result-line">Bereich		        ${actualRange}</pre>
+      <pre class="result-line">Dein Tipp		      ${guessText}</pre>
+      <pre class="result-line">Deine Superzahl		${s}</pre>
     `;
 
   if (inSuper) {
