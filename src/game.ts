@@ -119,7 +119,7 @@ drawBtn?.addEventListener("click", () => {
   if (inSuper) {
     resultEl.innerHTML = `
       ${lines}
-      <p class="super">EX EX EX leert eure Gläser</p>
+      <p class="super">EX EX EX leert eure Gläser!!!</p>
     `;
   } else if (correct) {
     resultEl.innerHTML = `
