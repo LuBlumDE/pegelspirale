@@ -5,7 +5,7 @@ function clamp(n: number) {
   return Math.min(100, Math.max(0, Math.floor(n)));
 }
 function draw(): number {
-  return Math.floor(Math.random() * 102); // 0..101
+  return Math.floor(Math.random() * 100) + 1; // 1..100
 }
 
 let guess: "over" | "under" = "under";
@@ -102,16 +102,15 @@ drawBtn?.addEventListener("click", () => {
   const s = clamp(Number(superInput.value));
   const n = draw();
   const over = n >= 51;
-  const inSuper = n >= Math.max(0, s - 2) && n <= Math.min(101, s + 2);
+  const inSuper = n >= Math.max(1, s - 2) && n <= Math.min(100, s + 2);
   const guess = getGuess();
   const correct = (guess === "over" && over) || (guess === "under" && !over);
 
-  const actualRange = over ? "drüber" : "drunter";
   const guessText = guess === "over" ? "drüber" : "drunter";
   const lines = `
       <h3 class="result-heading">Auswertung</h3>
       <pre class="result-line">Ergebnis &#9;&#9;&#9;${n}</pre>
-      <pre class="result-line">Bereich &#9;&#9;&#9;${actualRange}</pre>
+      <div class="result-divider"></div>
       <pre class="result-line">Dein Tipp &#9;&#9;&#9;${guessText}</pre>
       <pre class="result-line">Deine Superzahl &#9;&#9;${s}</pre>
     `;
